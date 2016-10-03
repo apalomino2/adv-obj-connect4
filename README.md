@@ -1,9 +1,7 @@
 # adv-obj-connect4
 ### UTEP Course CS3331 
 
-## PROJECT: Connect4
-
-## GROUP MEMBERS 
+### GROUP MEMBERS 
   Aaron Santellanes  
   Marco Muñoz  
   Samuel Alvidrez  
