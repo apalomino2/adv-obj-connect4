@@ -4,10 +4,10 @@
 ## PROJECT: Connect4
 
 ## GROUP MEMBERS 
-  Aaron Santellanes
-  Marco Muñoz
-  Samuel Alvidrez
-  Abner Palomino
+  Aaron Santellanes  
+  Marco Muñoz  
+  Samuel Alvidrez  
+  Abner Palomino  
 
 ### PROJECT DESCRIPTION
 Develop a Connect4 Game application. The Connect	Four	game	is	a	two-player	connection
