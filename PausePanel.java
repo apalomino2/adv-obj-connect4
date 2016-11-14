@@ -24,7 +24,7 @@ public class PausePanel extends JPanel{
 		c.anchor = GridBagConstraints.CENTER;
 		add(firstLabel, c);
 		
-		JButton unpauseBtn = new JButton("Unpause");
+		JButton unpauseBtn = new JButton("Resume");
 		unpauseBtn.addActionListener(ctrl);
 		c = new GridBagConstraints();
 		c.gridx = 1;
