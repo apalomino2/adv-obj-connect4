@@ -24,7 +24,7 @@ public class StartPanel extends JPanel{
 		c.anchor = GridBagConstraints.CENTER;
 		add(firstLabel, c);
 		
-		JButton playBtn = new JButton("Whatever");
+		JButton playBtn = new JButton("Play");
 		playBtn.addActionListener(controller);
 		c = new GridBagConstraints();
 		c.gridx = 1;
