@@ -1,30 +1,56 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
-import javax.swing.plaf.synth.SynthSpinnerUI;
 
+/**
+ * Controller for a Connect 4 game.
+ * @author Abner Palomino 
+ */
 public class Connect4Controller implements ActionListener{
+	/**
+	 * Model containing the data for the game.
+	 * @see Connect4Model
+	 */
 	Connect4Model model;
+	
+	/**
+	 * View which displays the game.
+	 * @see Connect4View
+	 */
 	Connect4View view;
+	
+	/**
+	 * Used to determine when player 1 is ready. It will be set to true 
+	 * when the pregame panel is showing and the a key is pressed. If 
+	 * the a key is released, then it will be set to false. 
+	 */
 	private boolean p1Ready;
+	
+	/**
+	 * Used to determine when player 2 is ready. It will be set to true 
+	 * when the pregame panel is showing and the l key is pressed. If 
+	 * the l key is released, then it will be set to false. 
+	 */
 	private boolean p2Ready;
+	
 	private boolean canPause;
-	private boolean pressed;
-	private char 	previous;
+	private char 	current;
 	private int     time;
 	
+	/**
+	 * aaaa
+	 * @param model
+	 * @param view
+	 */
 	public Connect4Controller(Connect4Model model, Connect4View view){  
 		this.model = model;
 		this.view  = view;
 		this.view.addListerner(this);
 		p1Ready  = p2Ready = false;
-		pressed  = false;
-		previous = ' ';
+		current  = ' ';
 		canPause = true;
-		time = 30;
+		time     = 30;
 	}
 	
 	public void begin(){
@@ -37,7 +63,7 @@ public class Connect4Controller implements ActionListener{
 		String s = btn.getText();
 		System.out.println("Clicked: " + s);
 		if(s.equals("Play"))
-			view.setPanel("pregame"); //skipping pregame panel until keyboard input is enabled
+			view.setPanel("pregame"); 
 		else if(s.equals("Instructions"))
 			view.setPanel("help");
 		else if(s.equals("Back"))
@@ -87,14 +113,13 @@ public class Connect4Controller implements ActionListener{
 	}
 	
 	private void keyboardNumberAction(String s){
-		if(!pressed){
+		if(current == ' '){
 			int d = Integer.parseInt(s.substring(s.length()-1));
-			canPause = true;
-			previous = s.charAt(s.length()-1);
-			pressed = true;
 			model.move(d);
+			canPause = true;
+			current = s.charAt(s.length()-1);
 		}
-		if(s.charAt(s.length()-1) == previous && s.matches("released."))
-			pressed = false;
+		if(s.charAt(s.length()-1) == current && s.matches("released."))
+			current = ' ';
 	}
 }

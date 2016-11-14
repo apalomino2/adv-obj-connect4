@@ -28,7 +28,7 @@ public class Connect4Model {
 		view.move(player1, column, row);
 		board[column][row] = (player1)? 1 : 2;
 		if(checkWin())
-			view.setMsg(((player1)? "Player1" : "Player2") + " wins! :D");
+			view.setMsg("Player" + ((player1)? "1" : "2") + " wins! :D");
 		canPause = true;
 		player1 = !player1;
 	}
