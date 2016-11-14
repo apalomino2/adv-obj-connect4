@@ -58,7 +58,7 @@ public class Connect4View {
 		gamePanel.move(player1, x, y);
 	}
 	
-	void setPMsg(boolean player1, String s){
+	void setMsg(boolean player1, String s){
 		if(player1)
 			preGamePanel.setp1Msg(s);
 		else

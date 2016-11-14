@@ -92,23 +92,23 @@ public class Connect4Controller implements ActionListener{
 	private void pregameAction(String s){
 		if(s.equals("aPressed")){
 			p1Ready = true;
-			view.setPMsg(true, "Player1 Ready!");
+			view.setMsg(true, "Player1 Ready!");
 			if(p1Ready && p2Ready)
 				view.setPanel("game");
 		}
 		else if(s.equals("aReleased")){
 			p1Ready = false;
-			view.setPMsg(true, "Press a");
+			view.setMsg(true, "Press a");
 		}
 		else if(s.equals("lPressed")){
 			p2Ready = true;
-			view.setPMsg(false, "Player2 Ready!");
+			view.setMsg(false, "Player2 Ready!");
 			if(p1Ready && p2Ready)
 				view.setPanel("game");
 		}
 		else if(s.equals("lReleased")){
 			p2Ready = false;
-			view.setPMsg(false, "Press l");
+			view.setMsg(false, "Press l");
 		}
 	}
 	
