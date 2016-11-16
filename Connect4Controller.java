@@ -43,20 +43,17 @@ public class Connect4Controller implements ActionListener{
 	 * @param model
 	 * @param view
 	 */
-	public Connect4Controller(Connect4Model model, Connect4View view){  
-		this.model = model;
-		this.view  = view;
-		this.view.addListerner(this);
+	public Connect4Controller(Connect4Model m, Connect4View v){  
+		model = m;
+		view  = v;
+		view.addListerner(this);
+		view.init();
 		p1Ready  = p2Ready = false;
 		current  = ' ';
 		canPause = true;
 		time     = 30;
 	}
 	
-	public void begin(){
-		view.begin();
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton btn = (JButton)e.getSource();
