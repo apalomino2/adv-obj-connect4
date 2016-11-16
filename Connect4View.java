@@ -14,7 +14,7 @@ public class Connect4View {
 		ctrl = c;
 	}
 	
-	void begin(){
+	void init(){
 		JPanel startPanel   = new StartPanel(ctrl);
 		JPanel pausePanel   = new PausePanel(ctrl);
 		JPanel helpPanel    = new HelpPanel(ctrl);
@@ -27,7 +27,9 @@ public class Connect4View {
 		cardPanel.add(pausePanel, "pause");
 		cardPanel.add(helpPanel, "instructions");
 		cardPanel.add(gamePanel, "game");
-		
+	}
+	
+	void show(){
 		JFrame frame = new JFrame("Connect4");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setMinimumSize(new Dimension(600, 600));
